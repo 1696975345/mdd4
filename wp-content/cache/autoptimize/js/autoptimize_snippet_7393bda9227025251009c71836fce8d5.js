@@ -1,0 +1,5 @@
+jQuery(document).ready(function($){var backEl=$('.backTop');backEl.click(function(){$('html,body').animate({scrollTop:0},500);});var $backToTopFun=function(){var st=$(document).scrollTop();(st>700)?backEl.show():backEl.hide();};$(window).bind("scroll",$backToTopFun);var post=$('.single-post .article');if(post.length&&!post.hasClass('post')){post.find('.entry').prepend('<div class="common-title"><h2>应用介绍</h2></div>');}
+$('.tab a').click(function(){$(this).parent().children('a').removeClass('active');$(this).addClass('active');$('.tab-content').hide();$('#tab-item-'+$(this).data('index')).show();})
+if($('.post .entry img').length){$('.post .entry img').each(function(index,value){$(value).wrap('<div class="pic-slide"><span class="LightGallery_Item"></span></div>');})}
+if($('.pic-slide').length){$('.pic-slide span').each(function(index,value){$(value).attr('lg-data-src',$(value).children('img').attr('src'));})
+$("body").lightGallery({selector:".LightGallery_Item"});}});
